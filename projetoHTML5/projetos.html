@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos Sociais - Organização Solidária</title>
+  
+  <!-- CSS modular -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <h1>Organização Solidária</h1>
+      <button class="nav-toggle" aria-label="Abrir menu">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li class="dropdown">
+            <a href="projetos.html">Projetos</a>
+            <ul class="dropdown-menu">
+              <li><a href="#voluntariado">Voluntariado</a></li>
+              <li><a href="#doacao">Como Doar</a></li>
+            </ul>
+          </li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Botão de modo escuro -->
+  <button id="toggle-dark" title="Alternar modo escuro 🌙">🌙</button>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Nossos Projetos</h1>
+      <p>Conheça nossas iniciativas e descubra como você pode fazer a diferença</p>
+    </section>
+
+    <section id="voluntariado">
+      <div class="grid">
+        <div class="col-6 col-md-12">
+          <h2>Voluntariado</h2>
+          <p>Participe como voluntário em nossas ações comunitárias e eventos. Temos oportunidades para todas as habilidades e disponibilidades.</p>
+          <div class="mt-3">
+            <span class="tag">Educação</span>
+            <span class="tag">Comunidade</span>
+            <span class="tag">Social</span>
+          </div>
+          <a href="cadastro.html" class="btn btn-primary mt-3">Quero ser Voluntário</a>
+        </div>
+        <div class="col-6 col-md-12">
+          <img src="assets/images/voluntariados.png" alt="Voluntários trabalhando" class="card">
+        </div>
+      </div>
+    </section>
+
+    <section id="doacao">
+      <div class="grid">
+        <div class="col-6 col-md-12">
+          <img src="assets/images/projeto1.png" alt="Ação social em andamento" class="card">
+        </div>
+        <div class="col-6 col-md-12">
+          <h2>Como Doar</h2>
+          <p>Você pode doar presencialmente ou nos ajudar compartilhando nossas causas. Qualquer contribuição faz a diferença!</p>
+          <div class="mt-3">
+            <span class="badge">Doação Online</span>
+            <span class="badge">Presencial</span>
+            <span class="badge">Recorrente</span>
+          </div>
+          <div class="alert alert-success mt-3">
+            <strong>Doe qualquer valor!</strong> Todo recurso é aplicado diretamente em nossos projetos.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-center">Outros Projetos</h2>
+      <div class="projetos-grid">
+        <div class="card">
+          <h3>Educação Infantil</h3>
+          <p>Projeto de reforço escolar para crianças em situação de vulnerabilidade.</p>
+          <span class="tag">Educação</span>
+        </div>
+        <div class="card">
+          <h3>Oficinas Profissionalizantes</h3>
+          <p>Cursos gratuitos para jovens e adultos seeking primeiro emprego.</p>
+          <span class="tag">Profissional</span>
+        </div>
+        <div class="card">
+          <h3>Assistência Social</h3>
+          <p>Distribuição de cestas básicas e kits de higiene para famílias.</p>
+          <span class="tag">Assistência</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Organização Solidária</p>
+    </div>
+  </footer>
+
+  <script>
+    // Modo escuro
+    const toggleButton = document.getElementById('toggle-dark');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+
+    // Menu Hamburguer
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
